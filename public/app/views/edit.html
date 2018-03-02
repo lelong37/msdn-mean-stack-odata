@@ -1,0 +1,90 @@
+﻿<!-- removed k-ng-options, having it causes the chart to wait for indefinitely to call dataSource.read/fetch() -->
+
+
+<div class="demo-section">
+    <div class="k-block" style="padding: 20px">
+        <div class="k-block k-info-colored">
+            <strong>Note: </strong>Please fill out all of the fields in this form.
+        </div>
+        <div>
+            <dl>
+                <dt>
+                    <label for="productName">Name:</label>
+                </dt>
+                <dd>
+                    <input id="productName" type="text" ng-model="product.ProductName" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="englishName">English Name:</label>
+                </dt>
+                <dd>
+                    <input id="englishName" type="text" ng-model="product.Englishname" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="quantityPerUnit">Quantity Per Unit:</label>
+                </dt>
+                <dd>
+                    <input id="quantityPerUnit" type="text" ng-model="product.QuantityPerUnit" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="unitPrice">Unit Price:</label>
+                </dt>
+                <dd>
+                    <input id="unitPrice" type="text" ng-model="product.UnitPrice" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="unitsInStock">Units in Stock:</label>
+                </dt>
+                <dd>
+                    <input id="unitsInStock" type="text" ng-model="product.UnitsInStock" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="reorderLevel">Reorder Level</label>
+                </dt>
+                <dd>
+                    <input id="reorderLevel" type="text" ng-model="product.ReorderLevel" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="discontinued">Discontinued:</label>
+                </dt>
+                <dd>
+                    <input id="discontinued" type="text" ng-model="product.Discontinued" class="k-textbox" />
+                </dd>
+                <dt>
+                    <label for="category">Category:</label>
+                </dt>
+                <dd>
+                    <select 
+                            kendo-drop-down-list="dropDown"
+                            k-data-text-field="'CategoryName'"
+                            k-data-value-field="'CategoryID'"
+                            k-data-source="categoryDataSource"
+                            k-ng-delay="product.Category.CategoryID"
+                            style="width: 200px"></select>
+                </dd>
+            </dl>
+
+            <button kendo-button ng-click="save()" data-sprite-css-class="k-icon k-i-tick">Save</button>
+            <button kendo-button ng-click="cancel()">Cancel</button>
+
+            <style scoped>
+                dd {
+                    margin: 0px 0px 20px 0px;
+                    width: 100%;
+                }
+
+                label {
+                    font-size: small;
+                    font-weight: normal;
+                }
+
+                .k-textbox { width: 100%; }
+
+                .k-info-colored {
+                    margin: 10px;
+                    padding: 10px;
+                }
+            </style>
+        </div>
+    </div>
+</div>
